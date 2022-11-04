@@ -37,6 +37,13 @@
             {
               "client_id": "539825877591-mtibj1tc591emaa1vj5q8t2tm4gnbjns.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "539825877591-j79pjhb54q7p1q2pih72kf4caci5v4pa.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "no.ntnu.mobile-application"
+              }
             }
           ]
         }
