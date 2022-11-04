@@ -28,3 +28,6 @@ flutter:
 
   uses-material-design: true
 
+  assets:
+    - images/google-logo.png
+    - images/facebook-logo.png
