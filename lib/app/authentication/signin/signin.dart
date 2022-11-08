@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_application/app/authentication/google_signin/google_sign_in_button.dart';
 import 'package:mobile_application/app/authentication/signin/or_divider.dart';
-import 'password.dart';
-import 'email.dart';
-import 'button.dart';
+import 'password_field.dart';
+import 'email_field.dart';
+import 'signin_button.dart';
 import 'forgot_password_button.dart';
 
 class SignIn extends StatelessWidget {
@@ -13,11 +13,11 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: const [
-        Email(),
+        EmailField(),
         SizedBox(
           height: 16.0,
         ),
-        Password(),
+        PasswordField(),
         ForgotPasswordButton(),
         SizedBox(
           height: 16.0,

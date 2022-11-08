@@ -12,11 +12,13 @@ dependencies:
   flutter:
     sdk: flutter
   cloud_firestore: ^4.0.4
+  firebase_auth: ^4.1.1
   firebase_core: ^2.1.1
-  loading_animation_widget:
-
-
+  equatable: ^2.0.0
   cupertino_icons: ^1.0.2
+  formz: ^0.4.1
+  flutter_riverpod: ^2.1.1
+  loading_animation_widget:
 
 dev_dependencies:
   flutter_test:

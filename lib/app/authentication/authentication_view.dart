@@ -24,13 +24,15 @@ class _AuthenticationViewState extends State<AuthenticationView> {
           padding: const EdgeInsets.fromLTRB(16.0, 30.0, 0.0, 0.0),
           child: Align(
             alignment: Alignment.topLeft,
-            child: _showSignIn ? Text("Welcome Back") : Text("Sign Up"),
+            child: _showSignIn
+                ? const Text("Welcome Back")
+                : const Text("Sign Up"),
           ),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 150, 16, 0),
           child: SlideFadeSwitcher(
-            child: _showSignIn ? SignIn() : SignUp(),
+            child: _showSignIn ? const SignIn() : const SignUp(),
           ),
         ),
         AuthSwitchButton(

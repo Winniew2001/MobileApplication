@@ -24,11 +24,11 @@ class ForgotPasswordView extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: Text("Cancel"),
+                    child: const Text("Cancel"),
                   ),
                   TextButton(
                     onPressed: () {},
-                    child: Text("Request"),
+                    child: const Text("Request"),
                   ),
                 ],
               )

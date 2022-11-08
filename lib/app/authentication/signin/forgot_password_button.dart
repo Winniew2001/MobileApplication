@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:mobile_application/app/authentication/forgot_password/forgot_password_view.dart';
 
 class ForgotPasswordButton extends StatelessWidget {
@@ -12,7 +11,7 @@ class ForgotPasswordButton extends StatelessWidget {
         Navigator.of(context).push(
           CupertinoPageRoute(
             fullscreenDialog: true,
-            builder: (_) => ForgotPasswordView(),
+            builder: (_) => const ForgotPasswordView(),
           ),
         );
       },

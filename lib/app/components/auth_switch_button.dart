@@ -24,7 +24,7 @@ class AuthSwitchButton extends StatelessWidget {
         onTap: onTap,
         child: Container(
           alignment: Alignment.center,
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: SlideFadeSwitcher(
             child: showSignIn
                 ? const Text(

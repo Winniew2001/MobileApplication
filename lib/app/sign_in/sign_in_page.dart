@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_application/app/sign_in/sign_in_button.dart';
 import 'package:mobile_application/app/sign_in/social_sign_in_button.dart';
-import 'package:mobile_application/common_widgets/custom_elevated_button.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key}) : super(key: key);

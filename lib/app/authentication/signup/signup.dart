@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'name.dart';
-import 'password.dart';
-import 'email.dart';
-import 'button.dart';
+import 'password_field.dart';
+import 'email_field.dart';
+import 'signup_button.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -10,16 +9,12 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const[
-        Name(),
+      children: const [
+        EmailField(),
         SizedBox(
           height: 16.0,
         ),
-        Email(),
-        SizedBox(
-          height: 16.0,
-        ),
-        Password(),
+        PasswordField(),
         SizedBox(
           height: 16.0,
         ),
