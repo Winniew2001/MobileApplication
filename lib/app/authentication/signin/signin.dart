@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_application/app/authentication/google_signin/google_sign_in_button.dart';
+import 'package:mobile_application/app/authentication/signin/or_divider.dart';
 import 'password.dart';
 import 'email.dart';
 import 'button.dart';
@@ -21,6 +23,8 @@ class SignIn extends StatelessWidget {
           height: 16.0,
         ),
         SignInButton(),
+        OrDivider(),
+        GoogleSignInButton(),
       ],
     );
   }

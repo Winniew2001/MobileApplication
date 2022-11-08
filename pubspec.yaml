@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   cloud_firestore: ^4.0.4
   firebase_core: ^2.1.1
+  loading_animation_widget:
 
 
   cupertino_icons: ^1.0.2
