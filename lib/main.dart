@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mobile_application/app/authentication/authentication_view.dart';
 import 'package:mobile_application/app/authentication/controller/authentication_controller.dart';
+import 'package:mobile_application/app/pages/all_recipes_page.dart';
 import 'package:mobile_application/firebase_options.dart';
 
 Future main() async {
@@ -20,16 +21,14 @@ class MyApp extends ConsumerWidget {
     final authenticationState = ref.watch(authProvider);
 
     Widget getHome() {
-      //if (authenticationState.status == AuthenticationStatus.authenticated) {
-      //  return const not_sign-in_or_sign-up;
-      //} else if (authenticationState.status == AuthenticationStatus.unauthenticated) {
-      //  return const AuthenticationView();
-      //} else {
-      //  // Like this for now at least
-      //  return const AuthenticationView();
-      //}
-
-      return const AuthenticationPage();
+      if (authenticationState.status == AuthenticationStatus.authenticated) {
+        return const AllRecipesPage();
+      } else if (authenticationState.status == AuthenticationStatus.unauthenticated) {
+        return const AllRecipesPage();
+      } else {
+        // Like this for now at least
+        return const AllRecipesPage();
+      }
     }
 
     return MaterialApp(
