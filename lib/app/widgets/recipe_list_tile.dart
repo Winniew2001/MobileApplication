@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_application/app/widgets/recipe_detail_page.dart';
 
+//TODO: Clean up widget
 class RecipeListTile extends StatelessWidget {
   const RecipeListTile({Key? key}) : super(key: key);
 
@@ -12,10 +14,7 @@ class RecipeListTile extends StatelessWidget {
           onPressed: () {
             showCupertinoModalPopup(
               context: context,
-              builder: (context) => Container(
-                color: Colors.white,
-                child: Text('Recipe detail'),
-              ),
+              builder: (context) => const RecipeDetail(),
             );
           },
           child: Row(
