@@ -29,7 +29,7 @@ class MyApp extends ConsumerWidget {
       //  return const AuthenticationView();
       //}
 
-      return const AuthenticationView();
+      return const AuthenticationPage();
     }
 
     return MaterialApp(

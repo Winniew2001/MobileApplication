@@ -4,14 +4,14 @@ import 'package:mobile_application/app/authentication/signup/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_application/app/components/slide_fade_switcher.dart';
 
-class AuthenticationView extends StatefulWidget {
-  const AuthenticationView({Key? key}) : super(key: key);
+class AuthenticationPage extends StatefulWidget {
+  const AuthenticationPage({Key? key}) : super(key: key);
 
   @override
-  State<AuthenticationView> createState() => _AuthenticationViewState();
+  State<AuthenticationPage> createState() => _AuthenticationPageState();
 }
 
-class _AuthenticationViewState extends State<AuthenticationView> {
+class _AuthenticationPageState extends State<AuthenticationPage> {
   bool _showSignIn = true;
 
   @override
