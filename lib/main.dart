@@ -1,10 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mobile_application/app/authentication/authentication_view.dart';
 import 'package:mobile_application/app/authentication/controller/authentication_controller.dart';
-import 'package:mobile_application/app/pages/all_recipes_page.dart';
 import 'package:mobile_application/firebase_options.dart';
+
+import 'app/storage/firestore/firestore_view.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,12 +22,12 @@ class MyApp extends ConsumerWidget {
 
     Widget getHome() {
       if (authenticationState.status == AuthenticationStatus.authenticated) {
-        return const AllRecipesPage();
+        return const FirestoreView();
       } else if (authenticationState.status == AuthenticationStatus.unauthenticated) {
-        return const AllRecipesPage();
+        return const FirestoreView();
       } else {
         // Like this for now at least
-        return const AllRecipesPage();
+        return const FirestoreView();
       }
     }
 

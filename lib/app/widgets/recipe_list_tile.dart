@@ -26,7 +26,7 @@ class RecipeListTile extends StatelessWidget {
                   color: Colors.blueGrey,
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage('https://placehold.it/100x100'),
+                    image: NetworkImage('https://picsum.photos/100'),
                   ),
                 ),
               ),
