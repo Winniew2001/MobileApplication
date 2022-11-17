@@ -17,7 +17,6 @@ class AllRecipesPage extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate([
               const RecipeListTile(),
-              const NoRecipes(),
               //for (int i = 0; i < 100; i++) (Text('Recipe $i')),
             ]),
           )
