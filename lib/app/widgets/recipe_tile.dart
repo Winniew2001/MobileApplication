@@ -1,5 +1,3 @@
-import 'package:mobile_application/app/storage/firebase_storage/storage.dart';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_application/app/pages/recipe_detail_page.dart';
@@ -18,7 +16,7 @@ class RecipeTile extends StatelessWidget {
       onPressed: () {
         showCupertinoModalPopup(
           context: context,
-          builder: (context) => const RecipeDetail(),
+          builder: (context) => RecipeDetail(recipe: recipe),
         );
       },
       child: Row(

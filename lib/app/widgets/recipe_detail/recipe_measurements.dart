@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_application/app/widgets/sized_box_20.dart';
 
 class RecipeMeasurements extends StatelessWidget {
   final Map<String, dynamic>? measurements;
@@ -11,7 +10,7 @@ class RecipeMeasurements extends StatelessWidget {
     if (measurements == null) {
       return const Text("Measurements not found!");
     }
-    print(measurements?.length);
+
     return Column(
       children: [
         ListView.builder(

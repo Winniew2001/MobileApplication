@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_application/app/widgets/recipe_list_tile.dart';
 
-import '../widgets/no_recipes.dart';
-
 class AllRecipesPage extends StatelessWidget {
   const AllRecipesPage({Key? key}) : super(key: key);
 

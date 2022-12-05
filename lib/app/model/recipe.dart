@@ -24,8 +24,6 @@ class Recipe {
     SnapshotOptions? options,
   ) {
     final data = snapshot.data();
-    //print(data?['measurement']);
-    print(data);
     return Recipe(
       name: data?['name'],
       description: data?['description'],
