@@ -5,6 +5,7 @@ import 'package:mobile_application/app/model/form_values.dart';
 import 'package:mobile_application/app/model/recipe.dart';
 import 'package:mobile_application/app/pages/new_or_update_collection_page.dart';
 import 'package:mobile_application/app/pages/new_or_update_recipe_page.dart';
+import 'package:mobile_application/app/pages/web_scrape_page.dart';
 import 'package:mobile_application/app/widgets/recipe_list_tile.dart';
 import '../model/collection.dart';
 
@@ -32,6 +33,22 @@ class CollectionRecipesPage extends StatelessWidget {
                   .then((_) => Navigator.of(context).pop());
             },
             icon: const Icon(Icons.delete_forever),
+          ),
+          IconButton(
+            onPressed: () async {
+              ref
+                  .doc(id)
+                  .collection("recipes")
+                  .doc()
+                  .withConverter(
+                  fromFirestore: Recipe.fromFirestore,
+                  toFirestore: (Recipe recipe, _) => recipe.toFirestore())
+                  .set(await WebScrapePageState.getWebsiteData(
+                  'https://www.allrecipes.com/recipe/263394/garlic-shrimp-pasta-bake/'
+                  //'https://www.allrecipes.com/recipe/281646/the-best-baked-ziti/'
+              ));
+            },
+            icon: const Icon(Icons.download),
           ),
           IconButton(
             onPressed: () {
