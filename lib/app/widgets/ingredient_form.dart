@@ -57,7 +57,6 @@ class IngredientFormState extends State<IngredientForm> {
       }
       initial = false;
     }
-
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -79,9 +78,10 @@ class IngredientFormState extends State<IngredientForm> {
               key: ValueKey(i),
               children: [
                 SizedBox(
-                  width: 290,
+                  width: 20,
                   child: TextField(
                     controller: textControllers[i].values.first,
+                    maxLines: 2,
                     onChanged: (value) {
                       _updateField(value, i);
                     },

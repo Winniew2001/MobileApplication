@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_application/app/model/form_values.dart';
-import 'package:mobile_application/app/pages/ingredient_form.dart';
+import 'package:mobile_application/app/widgets/ingredient_form.dart';
 import 'package:mobile_application/app/widgets/recipe_form.dart';
 import 'package:mobile_application/app/widgets/select_recipe_image.dart';
 import 'package:mobile_application/app/widgets/sized_box_20.dart';
 import '../model/recipe.dart';
 import '../storage/firebase_storage/storage.dart';
-import 'instruction_form.dart';
+import '../widgets/instruction_form.dart';
 
 /*
  * Page where a recipe can be created or update an existing recipe.

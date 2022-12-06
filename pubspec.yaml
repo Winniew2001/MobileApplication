@@ -24,6 +24,8 @@ dependencies:
   loading_animation_widget:
   google_sign_in: ^5.4.2
   file_picker: ^5.2.2
+  http: ^0.13.4
+  html: ^0.15.0
 
 dev_dependencies:
   flutter_test:
