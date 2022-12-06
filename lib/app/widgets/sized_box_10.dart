@@ -8,6 +8,8 @@ class SmallSizedBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Adding const here breaks the app
+    // ignore: prefer_const_constructors
     return SizedBox(
         height: 10
     );

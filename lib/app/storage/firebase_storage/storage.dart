@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 
 /*
  * Get images and upload images to firebase cloud storage.
@@ -7,15 +8,18 @@ import 'package:firebase_storage/firebase_storage.dart';
 class Storage {
   final FirebaseStorage storage = FirebaseStorage.instance;
 
-  Future<void> uploadFile(String filepath, String filename) async {
-    File file = File(filepath);
+  Future<void> uploadFile(String localFilepath, String cloudFilePath) async {
+    File file = File(localFilepath);
     try {
-      await storage.ref('test/$filename').putFile(file);
+      await storage.ref(cloudFilePath).putFile(file);
     } on FirebaseStorage catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 
+  // Primarily for testing
   Future<ListResult> listFiles() async {
     ListResult result = await storage.ref('test').listAll();
     return result;

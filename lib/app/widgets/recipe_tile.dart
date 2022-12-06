@@ -10,7 +10,7 @@ import '../model/recipe.dart';
  */
 class RecipeTile extends StatelessWidget {
   final Recipe recipe;
-  final CollectionReference<Map<String, dynamic>> ref;
+  final CollectionReference<Recipe> ref;
   final String id;
 
   const RecipeTile(

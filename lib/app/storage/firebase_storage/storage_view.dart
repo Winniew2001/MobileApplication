@@ -42,9 +42,7 @@ class StorageState extends State<StorageView> {
                 final path = results.files.single.path!;
                 final filename = results.files.single.name;
 
-                storage
-                    .uploadFile(path, filename)
-                    .then((value) => print("Done"));
+                storage.uploadFile(path, filename);
               },
               child: const Text("Upload file"),
             ),

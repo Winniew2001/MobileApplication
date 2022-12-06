@@ -5,7 +5,7 @@ import 'package:mobile_application/app/pages/new_or_update_recipe_page.dart';
 import 'package:mobile_application/app/widgets/recipe_detail/recipe_headers.dart';
 import 'package:mobile_application/app/widgets/recipe_detail/recipe_measurements.dart';
 import 'package:mobile_application/app/widgets/recipe_detail/recipe_description.dart';
-import 'package:mobile_application/app/widgets/recipe_detail/recipe_servingSize.dart';
+import 'package:mobile_application/app/widgets/recipe_detail/recipe_serving_size.dart';
 import 'package:mobile_application/app/widgets/recipe_image.dart';
 import 'package:mobile_application/app/widgets/recipe_detail/recipe_instructions.dart';
 import 'package:mobile_application/app/widgets/recipe_detail/recipe_title.dart';
@@ -18,7 +18,7 @@ import '../model/recipe.dart';
  */
 class RecipeDetail extends StatelessWidget {
   final Recipe recipe;
-  final CollectionReference<Map<String, dynamic>> ref;
+  final CollectionReference<Recipe> ref;
   final String id;
 
   const RecipeDetail(
@@ -34,9 +34,14 @@ class RecipeDetail extends StatelessWidget {
           IconButton(
             onPressed: () {
               showCupertinoModalPopup(
-                  context: context,
-                  builder: (context) => NewOrUpdateRecipePage(
-                      pageTitle: "Edit recipe", id: id, recipe: recipe));
+                context: context,
+                builder: (context) => NewOrUpdateRecipePage(
+                  pageTitle: "Edit recipe",
+                  id: id,
+                  recipe: recipe,
+                  ref: ref,
+                ),
+              );
             },
             icon: const Icon(Icons.edit),
           ),
@@ -65,9 +70,10 @@ class RecipeDetail extends StatelessWidget {
                       RecipeTitle(title: recipe.name),
                       const MediumSizedBox(),
                       SizedBox(
-                          width: double.infinity,
-                          height: 300,
-                          child: RecipeImage(imagePath: recipe.imagePath)),
+                        width: double.infinity,
+                        height: 300,
+                        child: RecipeImage(imagePath: recipe.imagePath),
+                      ),
                       const MediumSizedBox(),
                       const RecipeHeader(header: "Description"),
                       RecipeDescription(description: recipe.description),

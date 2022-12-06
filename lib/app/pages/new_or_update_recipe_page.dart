@@ -16,9 +16,10 @@ class NewOrUpdateRecipePage extends StatelessWidget {
   final String pageTitle;
   final String? id;
   final Recipe? recipe;
+  final CollectionReference<Recipe> ref;
 
   const NewOrUpdateRecipePage(
-      {super.key, required this.pageTitle, this.id, this.recipe});
+      {super.key, required this.pageTitle, required this.ref, this.id, this.recipe});
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +81,11 @@ class NewOrUpdateRecipePage extends StatelessWidget {
   }
 
   void _submit(FormValues formValues) {
+    final tempRecipeRef = id == null ? ref.doc() : ref.doc(id);
+    final recipeRef = tempRecipeRef.withConverter(
+        fromFirestore: Recipe.fromFirestore,
+        toFirestore: (Recipe recipe, _) => recipe.toFirestore());
+
     String name, instructions, description, imageUrl;
     int servingSize;
     List<String> ingredients = [];
@@ -93,7 +99,9 @@ class NewOrUpdateRecipePage extends StatelessWidget {
       ingredients = ["None"];
     } else {
       for (int i = 0; i < formValues.ingredients.length; i++) {
-        ingredients.add(formValues.ingredients[i].values.first);
+        ingredients.add(
+            formValues.ingredients[i].values.first
+        );
       }
     }
 
@@ -102,9 +110,11 @@ class NewOrUpdateRecipePage extends StatelessWidget {
     } else {
       final Storage storage = Storage();
       storage
-          .uploadFile(formValues.localImagePath, formValues.imageName)
-          .then((value) => print("Done"));
-      imageUrl = "test/${formValues.imageName}";
+          .uploadFile(
+          formValues.localImagePath,
+          recipeRef.path
+      );
+      imageUrl = recipeRef.path;
     }
 
     Recipe recipe = Recipe(
@@ -113,29 +123,9 @@ class NewOrUpdateRecipePage extends StatelessWidget {
         servingSize: servingSize,
         instructions: instructions,
         measurements: ingredients,
-        imagePath: imageUrl);
+        imagePath: imageUrl
+    );
 
-    final recipieRef = FirebaseFirestore.instance
-        .collection("users")
-        .doc("tVBcwa4zBOihZhiQNZ4I")
-        .collection("collections")
-        .doc("Sbs0RsD66KhwnYsClIas")
-        .collection("recipes");
-
-    if (id == null) {
-      recipieRef
-          .doc()
-          .withConverter(
-              fromFirestore: Recipe.fromFirestore,
-              toFirestore: (Recipe recipe, _) => recipe.toFirestore())
-          .set(recipe);
-    } else {
-      recipieRef
-          .doc(id)
-          .withConverter(
-              fromFirestore: Recipe.fromFirestore,
-              toFirestore: (Recipe recipe, _) => recipe.toFirestore())
-          .set(recipe);
-    }
+    recipeRef.set(recipe);
   }
 }

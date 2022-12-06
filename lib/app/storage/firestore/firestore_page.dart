@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /*
@@ -66,10 +67,15 @@ class FirestoreState extends State<FirestorePage> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  userReference
-                      .add({'id': id})
-                      .then((value) => print('User added'))
-                      .catchError((error) => print("$error"));
+                  userReference.add({'id': id}).then((value) {
+                    if (kDebugMode) {
+                      print('User added');
+                    }
+                  }).catchError((error) {
+                    if (kDebugMode) {
+                      print("$error");
+                    }
+                  });
                 },
                 child: const Text("Submit"),
               )
