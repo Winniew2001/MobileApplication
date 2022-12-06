@@ -4,11 +4,13 @@ import 'package:formz/formz.dart';
 import 'package:mobile_application/app/authentication/forgot_password/controller/forgot_password_controller.dart';
 import 'package:mobile_application/app/components/loading_error.dart';
 import 'package:mobile_application/app/components/text_input_field.dart';
-
 import '../behavior/email.dart';
 
-class ForgotPasswordView extends ConsumerWidget {
-  const ForgotPasswordView({Key? key}) : super(key: key);
+/*
+ * Page for displaying reset password.
+ */
+class ForgotPasswordPage extends ConsumerWidget {
+  const ForgotPasswordPage({Key? key}) : super(key: key);
 
   String _getButtonText(FormzStatus status) {
     if (status.isSubmissionInProgress) {

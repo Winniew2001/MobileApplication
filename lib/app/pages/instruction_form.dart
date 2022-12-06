@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_application/app/model/form_values.dart';
 
 /*
- *
+ * Resizing textfield for long string inputs.
  */
 class InstructionForm extends StatefulWidget {
   final FormValues formValues;

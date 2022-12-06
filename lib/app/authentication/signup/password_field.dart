@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mobile_application/app/authentication/signup/controller/signup_controller.dart';
-
 import '../../components/text_input_field.dart';
 import '../behavior/password.dart';
 
+/*
+ * Field for entering password.
+ */
 class PasswordField extends ConsumerWidget {
   const PasswordField({Key? key}) : super(key: key);
 

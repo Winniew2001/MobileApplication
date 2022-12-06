@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mobile_application/app/model/form_values.dart';
 import 'package:mobile_application/app/widgets/sized_box_20.dart';
 
+/*
+ * Used to create a string array with ingredients.
+ */
 class IngredientForm extends StatefulWidget {
   final FormValues formValues;
 

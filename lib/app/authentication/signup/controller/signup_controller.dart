@@ -4,15 +4,17 @@ import 'package:formz/formz.dart';
 import 'package:mobile_application/app/authentication/authentication_repository/authentication_exceptions.dart';
 import 'package:mobile_application/app/authentication/behavior/email.dart';
 import 'package:mobile_application/app/authentication/behavior/password.dart';
-
 import '../../authentication_repository/firebase_auth_repository/authentication_repository.dart';
-
 part 'signup_state.dart';
+
 
 final signUpProvider =
     StateNotifierProvider.autoDispose<SignUpController, SignUpState>(
         (ref) => SignUpController(ref.watch(fireBaseAuthRepoProvider)));
 
+/*
+ * In charge of the sign up process.
+ */
 class SignUpController extends StateNotifier<SignUpState> {
   final AuthenticationRepository _authenticationRepository;
 

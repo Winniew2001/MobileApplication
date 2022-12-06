@@ -1,3 +1,8 @@
+/*
+ * Exceptions.
+ */
+
+
 class SignUpWithEmailException implements Exception {
   final String code;
   const SignUpWithEmailException(this.code);

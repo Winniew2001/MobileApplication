@@ -10,7 +10,7 @@ import '../storage/firebase_storage/storage.dart';
 import 'instruction_form.dart';
 
 /*
- * Page where a new recipe can be created or updating an existing recipe.
+ * Page where a recipe can be created or update an existing recipe.
  */
 class NewOrUpdateRecipePage extends StatelessWidget {
   final String pageTitle;

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*
+ * Fancy animation :OOOOO
+ */
 class SizeFadeSwitcher extends StatelessWidget {
   final Widget child;
 

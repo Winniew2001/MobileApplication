@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mobile_application/app/authentication/google_signin/controller/google_sign_in_controller.dart';
-import 'package:mobile_application/app/components/animated_button.dart';
+import 'package:mobile_application/misc/animated_button.dart';
 import 'package:mobile_application/app/components/loading_error.dart';
+import '../../../misc/loading_sheet.dart';
 
+/*
+ * Button for signing in with google.
+ */
 class GoogleSignInButton extends ConsumerWidget {
   const GoogleSignInButton({Key? key}) : super(key: key);
 

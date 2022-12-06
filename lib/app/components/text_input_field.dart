@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_application/app/components/size_fade_switcher.dart';
+import 'package:mobile_application/misc/size_fade_switcher.dart';
 
+/*
+ * Input fields used for authentication.
+ */
 class TextInputField extends StatelessWidget {
   final String hintText;
   final void Function(String value) onChanged;

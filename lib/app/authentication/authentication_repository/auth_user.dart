@@ -1,5 +1,8 @@
 import 'package:equatable/equatable.dart';
 
+/*
+ * Representation of an authenticated user.
+ */
 class AuthUser extends Equatable {
   final String id;
   final String? email;

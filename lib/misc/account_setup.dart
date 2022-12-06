@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../app/model/collection.dart';
+import '../app/model/recipe.dart';
 
-import '../model/collection.dart';
-import '../model/recipe.dart';
-
+/*
+ * Sets some dummy data as default for all users.
+ */
 class AccountSetup {
 static Future<void> setUpUser() async {
   FirebaseFirestore

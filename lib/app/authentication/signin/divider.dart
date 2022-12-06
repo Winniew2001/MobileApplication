@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*
+ * Thin line for dividing sign in options.
+ */
 class OrDivider extends StatelessWidget {
   const OrDivider({Key? key}) : super(key: key);
 

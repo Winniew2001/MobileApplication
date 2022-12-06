@@ -1,3 +1,6 @@
+/*
+ * Values used as temporary communication between widgets.
+ */
 class FormValues {
   late String name = "";
   late String description = "";

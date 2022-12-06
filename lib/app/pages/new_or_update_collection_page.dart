@@ -5,9 +5,11 @@ import 'package:mobile_application/app/model/form_values.dart';
 import 'package:mobile_application/app/widgets/select_recipe_image.dart';
 import 'package:mobile_application/app/widgets/sized_box_10.dart';
 import 'package:mobile_application/app/widgets/sized_box_20.dart';
-
 import '../storage/firebase_storage/storage.dart';
 
+/*
+ * Page where a collection is created or updated.
+ */
 class NewOrUpdateCollectionPage extends StatelessWidget {
   NewOrUpdateCollectionPage({super.key, required this.formValues, this.id,
     required this.ref, required this.pageTitle});

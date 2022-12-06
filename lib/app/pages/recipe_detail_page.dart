@@ -28,7 +28,6 @@ class RecipeDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //TODO: add check
         title: Text(recipe.name!),
         actions: [
           IconButton(

@@ -6,9 +6,11 @@ import 'package:mobile_application/app/model/recipe.dart';
 import 'package:mobile_application/app/pages/new_or_update_collection_page.dart';
 import 'package:mobile_application/app/pages/new_or_update_recipe_page.dart';
 import 'package:mobile_application/app/widgets/recipe_list_tile.dart';
-
 import '../model/collection.dart';
 
+/*
+ * Page for displaying all the recipes in a collection.
+ */
 class CollectionRecipesPage extends StatelessWidget {
   final CollectionReference<Collection> ref;
   final Collection collection;

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_application/app/components/slide_fade_switcher.dart';
+import 'package:mobile_application/misc/slide_fade_switcher.dart';
 
 const _kTextStyle = TextStyle(
   fontWeight: FontWeight.w500,
   color: Color(0xFF9A9A9A),
 );
 
+/*
+ * Button for switching between sign in and sign up pages.
+ */
 class AuthSwitchButton extends StatelessWidget {
   final bool showSignIn;
   final VoidCallback onTap;

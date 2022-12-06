@@ -2,8 +2,11 @@ import 'package:mobile_application/app/components/auth_switch_button.dart';
 import 'package:mobile_application/app/authentication/signin/signin.dart';
 import 'package:mobile_application/app/authentication/signup/signup.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_application/app/components/slide_fade_switcher.dart';
+import 'package:mobile_application/misc/slide_fade_switcher.dart';
 
+/*
+ * Page for displaying authentication options.
+ */
 class AuthenticationPage extends StatefulWidget {
   const AuthenticationPage({Key? key}) : super(key: key);
 

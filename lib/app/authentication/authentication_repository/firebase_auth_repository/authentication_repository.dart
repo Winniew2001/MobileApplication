@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
 import '../auth_user.dart';
 import '../authentication_exceptions.dart';
 
@@ -9,6 +8,9 @@ final fireBaseAuthRepoProvider = Provider<AuthenticationRepository>(
     (_) => AuthenticationRepository()
 );
 
+/*
+ * Communicates with firebase authentication.Signs in and creates user.
+ */
 class AuthenticationRepository {
   final _firebaseAuth = FirebaseAuth.instance;
   final _googleSignIn = GoogleSignIn.standard();
