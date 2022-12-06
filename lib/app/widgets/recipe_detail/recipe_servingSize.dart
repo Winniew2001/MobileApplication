@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-//TODO: Refactor null check, reused in many of the recipe widgets
+/*
+ * Widget for displaying the serving size of a recipe.
+ */
 class RecipeServingSize extends StatelessWidget {
   final String? servingSize;
   const RecipeServingSize({Key? key, required this.servingSize}) : super(key: key);

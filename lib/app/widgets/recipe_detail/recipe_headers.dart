@@ -1,6 +1,8 @@
-//TODO: Refactor null check, reused in many of the recipe widgets
 import 'package:flutter/material.dart';
 
+/*
+ * Widget for displaying section headers.
+ */
 class RecipeHeader extends StatelessWidget {
   final String? header;
   const RecipeHeader({Key? key, required this.header}) : super(key: key);

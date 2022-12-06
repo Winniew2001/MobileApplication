@@ -21,12 +21,26 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
       resizeToAvoidBottomInset: false,
       body: Stack(children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(16.0, 30.0, 0.0, 0.0),
+          padding: const EdgeInsets.fromLTRB(16.0, 80.0, 0.0, 0.0),
           child: Align(
-            alignment: Alignment.topLeft,
+            alignment: Alignment.topCenter,
             child: _showSignIn
-                ? const Text("Welcome Back")
-                : const Text("Sign Up"),
+                ? const Text(
+                    "Welcome Back",
+                    style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                  )
+                : const Text(
+                    "Sign Up",
+                    style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                  ),
           ),
         ),
         Padding(
@@ -36,12 +50,13 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
           ),
         ),
         AuthSwitchButton(
-            showSignIn: _showSignIn,
-            onTap: () {
-              setState(() {
-                _showSignIn = !_showSignIn;
-              });
-            })
+          showSignIn: _showSignIn,
+          onTap: () {
+            setState(() {
+              _showSignIn = !_showSignIn;
+            });
+          },
+        ),
       ]),
     );
   }

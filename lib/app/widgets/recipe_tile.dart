@@ -3,15 +3,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_application/app/pages/recipe_detail_page.dart';
 import 'package:mobile_application/app/widgets/recipe_image.dart';
-
 import '../model/recipe.dart';
 
+/*
+ * Widget for displaying a preview of a recipe.
+ */
 class RecipeTile extends StatelessWidget {
   final Recipe recipe;
   final CollectionReference<Map<String, dynamic>> ref;
   final String id;
 
-  const RecipeTile({Key? key, required this.recipe, required this.ref, required this.id}) : super(key: key);
+  const RecipeTile(
+      {Key? key, required this.recipe, required this.ref, required this.id})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +29,10 @@ class RecipeTile extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-              width: 90,
-              height: 90,
-              child: RecipeImage(imagePath: recipe.imagePath)),
+            width: 90,
+            height: 90,
+            child: RecipeImage(imagePath: recipe.imagePath),
+          ),
           const SizedBox(width: 15),
           Expanded(
             child: Column(

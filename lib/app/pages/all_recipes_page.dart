@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_application/app/authentication/authentication_repository/firebase_auth_repository/authentication_repository.dart';
 import 'package:mobile_application/app/authentication/controller/authentication_controller.dart';
-import 'package:mobile_application/app/pages/new_recipe_page.dart';
+import 'package:mobile_application/app/pages/new_or_update_recipe_page.dart';
 import 'package:mobile_application/app/widgets/recipe_list_tile.dart';
 
 class AllRecipesPage extends StatelessWidget {
@@ -16,7 +16,7 @@ class AllRecipesPage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              showCupertinoModalPopup(context: context, builder: (context) => const NewRecipePage(pageTitle: "New Recipe", id: null));
+              showCupertinoModalPopup(context: context, builder: (context) => const NewOrUpdateRecipePage(pageTitle: "New Recipe", id: null));
             },
             icon: const Icon(Icons.add),
           ),

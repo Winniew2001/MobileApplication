@@ -2,20 +2,22 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_application/app/model/form_values.dart';
 import 'package:mobile_application/app/pages/ingredient_form.dart';
-import 'package:mobile_application/app/pages/recipe_form.dart';
-import 'package:mobile_application/app/pages/select_recipe_image.dart';
+import 'package:mobile_application/app/widgets/recipe_form.dart';
+import 'package:mobile_application/app/widgets/select_recipe_image.dart';
 import 'package:mobile_application/app/widgets/sized_box_20.dart';
-
 import '../model/recipe.dart';
 import '../storage/firebase_storage/storage.dart';
 import 'instruction_form.dart';
 
-class NewRecipePage extends StatelessWidget {
+/*
+ * Page where a new recipe can be created or updating an existing recipe.
+ */
+class NewOrUpdateRecipePage extends StatelessWidget {
   final String pageTitle;
   final String? id;
   final Recipe? recipe;
 
-  const NewRecipePage(
+  const NewOrUpdateRecipePage(
       {super.key, required this.pageTitle, this.id, this.recipe});
 
   @override
@@ -69,7 +71,7 @@ class NewRecipePage extends StatelessWidget {
                 },
                 child: const Text("Save"),
               ),
-              MediumSizedBox(),
+              const MediumSizedBox(),
             ],
           ),
         ),

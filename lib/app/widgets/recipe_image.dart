@@ -1,7 +1,9 @@
 import 'package:mobile_application/app/storage/firebase_storage/storage.dart';
-
 import 'package:flutter/material.dart';
 
+/*
+ * Widget for displaying the recipe image.
+ */
 class RecipeImage extends StatelessWidget {
   final String? imagePath;
 

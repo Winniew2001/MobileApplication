@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*
+ * Widget for displaying the ingredients and measurements of a recipe.
+ */
 class RecipeMeasurements extends StatelessWidget {
   final List<String>? measurements;
 

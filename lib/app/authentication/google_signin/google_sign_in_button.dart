@@ -28,7 +28,7 @@ class GoogleSignInButton extends ConsumerWidget {
         padding: const EdgeInsets.symmetric(vertical: 18.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(8),
           border: Border.all(
             color: Colors.black.withOpacity(0.2),
             width: 1.5,
@@ -37,7 +37,7 @@ class GoogleSignInButton extends ConsumerWidget {
         child: const Text(
           "Sign In With Google",
           style: TextStyle(
-            color: Color(0xFF9A9A9A),
+            color: Colors.black54,
             fontWeight: FontWeight.bold,
             fontSize: 18,
           ),

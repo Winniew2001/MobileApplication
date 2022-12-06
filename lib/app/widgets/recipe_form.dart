@@ -3,6 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:mobile_application/app/model/form_values.dart';
 import 'package:mobile_application/app/widgets/sized_box_10.dart';
 
+/*
+ * Widget for editing the name, description, and serving size of an existing
+ * recipe or new recipe.
+ */
 class RecipeForm extends StatefulWidget {
   final FormValues formValues;
   const RecipeForm({Key? key, required this.formValues}) : super(key: key);
@@ -52,7 +56,8 @@ class RecipeFormState extends State<RecipeForm> {
           TextField(
             controller: servingSizeController,
             onChanged: (value) {
-              widget.formValues.servingSize = value.trim().isNotEmpty ? int.tryParse(value.trim())! : 0;
+              widget.formValues.servingSize = value.trim().isNotEmpty
+                  ? int.tryParse(value.trim())! : 0;
             },
             keyboardType: const TextInputType.numberWithOptions(decimal: false),
             inputFormatters: <TextInputFormatter>[

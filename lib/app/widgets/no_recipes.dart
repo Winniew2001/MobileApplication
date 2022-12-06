@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*
+ * Widget for displaying that there are no current recipes saved.
+ */
 class NoRecipes extends StatelessWidget {
   const NoRecipes({Key? key}) : super(key: key);
 

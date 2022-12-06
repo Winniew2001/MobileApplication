@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-//TODO: Refactor null check, reused in many of the recipe widgets
+/*
+ * Widget for displaying recipe description.
+ */
 class RecipeDescription extends StatelessWidget {
   final String? description;
   const RecipeDescription({Key? key, required this.description}) : super(key: key);

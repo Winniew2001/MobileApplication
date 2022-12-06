@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*
+ * Widget for displaying recipe instructions.
+ */
 class RecipeInstructions extends StatelessWidget {
   final String? instructions;
   const RecipeInstructions({Key? key, required this.instructions}) : super(key: key);

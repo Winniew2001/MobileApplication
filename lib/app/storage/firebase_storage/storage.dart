@@ -1,7 +1,9 @@
 import 'dart:io';
-
 import 'package:firebase_storage/firebase_storage.dart';
 
+/*
+ * Get images and upload images to firebase cloud storage.
+ */
 class Storage {
   final FirebaseStorage storage = FirebaseStorage.instance;
 

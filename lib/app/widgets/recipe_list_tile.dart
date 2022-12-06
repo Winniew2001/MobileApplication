@@ -5,7 +5,9 @@ import 'package:mobile_application/app/widgets/recipe_tile.dart';
 
 import '../model/recipe.dart';
 
-//TODO: Clean up widget
+/*
+ * Widget for listing all the recipes in a collection.
+ */
 class RecipeListTile extends StatelessWidget {
   const RecipeListTile({Key? key}) : super(key: key);
 
@@ -43,8 +45,10 @@ class RecipeListTile extends StatelessWidget {
                     return Column(
                       children: [
                         RecipeTile(
-                            recipe:
-                                snapshot.data!.docs[index].data() as Recipe, ref: recipieRef, id: snapshot.data!.docs[index].id,),
+                          recipe: snapshot.data!.docs[index].data() as Recipe,
+                          ref: recipieRef,
+                          id: snapshot.data!.docs[index].id,
+                        ),
                         const RecipeDivider(),
                       ],
                     );

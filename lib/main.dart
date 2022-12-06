@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mobile_application/app/authentication/authentication_page.dart';
 import 'package:mobile_application/app/authentication/controller/authentication_controller.dart';
 import 'package:mobile_application/app/pages/all_recipes_page.dart';
-import 'package:mobile_application/app/pages/new_recipe_page.dart';
-import 'package:mobile_application/app/pages/select_recipe_image.dart';
+import 'package:mobile_application/app/pages/new_or_update_recipe_page.dart';
+import 'package:mobile_application/app/widgets/select_recipe_image.dart';
 import 'package:mobile_application/app/storage/firebase_storage/storage_view.dart';
 import 'package:mobile_application/firebase_options.dart';
 

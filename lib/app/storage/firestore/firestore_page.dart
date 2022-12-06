@@ -1,14 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class FirestoreView extends StatefulWidget {
-  const FirestoreView({super.key});
+/*
+ * Page to test interaction with firestore.
+ */
+class FirestorePage extends StatefulWidget {
+  const FirestorePage({super.key});
 
   @override
   FirestoreState createState() => FirestoreState();
 }
 
-class FirestoreState extends State<FirestoreView> {
+class FirestoreState extends State<FirestorePage> {
   @override
   Widget build(BuildContext context) {
     final Stream<QuerySnapshot> users =
