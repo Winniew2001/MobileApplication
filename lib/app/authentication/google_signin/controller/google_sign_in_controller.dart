@@ -10,6 +10,9 @@ final googleSignInProvider =
 
 enum GoogleSignInState { initial, loading, success, error }
 
+/*
+ * In charge of signing in via Google.
+ */
 class GoogleSignInController extends StateNotifier<GoogleSignInState> {
   final AuthenticationRepository _authenticationRepository;
 
@@ -21,11 +24,6 @@ class GoogleSignInController extends StateNotifier<GoogleSignInState> {
 
     try {
       final isNewUser = await _authenticationRepository.signInWithGoogle();
-
-      if (isNewUser != null && isNewUser) {
-        // Stuff
-      }
-
       state = GoogleSignInState.success;
     } on SignInWithGoogleException catch (_) {
       state = GoogleSignInState.error;

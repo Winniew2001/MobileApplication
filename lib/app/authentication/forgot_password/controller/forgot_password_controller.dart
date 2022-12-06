@@ -3,15 +3,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
 import 'package:mobile_application/app/authentication/authentication_repository/authentication_exceptions.dart';
 import 'package:mobile_application/app/authentication/behavior/email.dart';
-
 import '../../authentication_repository/firebase_auth_repository/authentication_repository.dart';
-
 part 'forgot_password_state.dart';
 
 final forgotPasswordProvider =
     StateNotifierProvider.autoDispose<ForgotPasswordController, ForgotPasswordState>(
         (ref) => ForgotPasswordController(ref.watch(fireBaseAuthRepoProvider)));
 
+/*
+ * In charge of helping users get new password.
+ */
 class ForgotPasswordController extends StateNotifier<ForgotPasswordState> {
   final AuthenticationRepository _authenticationRepository;
 

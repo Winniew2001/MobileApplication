@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_application/app/components/size_fade_switcher.dart';
+import 'package:mobile_application/misc/size_fade_switcher.dart';
 
+/*
+ * Input fields used for authentication.
+ */
 class TextInputField extends StatelessWidget {
   final String hintText;
   final void Function(String value) onChanged;
@@ -25,7 +28,7 @@ class TextInputField extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(8),
             border: Border.all(
               color: const Color(0xFFD0D0D0),
               width: 1.5,

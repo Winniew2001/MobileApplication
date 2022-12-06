@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
 import 'package:mobile_application/app/authentication/google_signin/google_sign_in_button.dart';
 import 'package:mobile_application/app/authentication/signin/divider.dart';
+import '../../../misc/loading_sheet.dart';
 import '../../components/loading_error.dart';
 import 'controller/signin_controller.dart';
 import 'password_field.dart';
@@ -10,6 +11,9 @@ import 'email_field.dart';
 import 'signin_button.dart';
 import 'forgot_password_button.dart';
 
+/*
+ * Widget for signing in a user.
+ */
 class SignIn extends ConsumerWidget {
   const SignIn({Key? key}) : super(key: key);
 

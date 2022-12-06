@@ -1,5 +1,8 @@
 part of 'signup_controller.dart';
 
+/*
+ * S
+ */
 class SignUpState extends Equatable {
   final Email email;
   final Password password;

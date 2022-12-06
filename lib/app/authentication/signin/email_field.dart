@@ -4,6 +4,9 @@ import '../../components/text_input_field.dart';
 import '../behavior/email.dart';
 import 'controller/signin_controller.dart';
 
+/*
+ * Field for entering email.
+ */
 class EmailField extends ConsumerWidget {
   const EmailField({Key? key}) : super(key: key);
 

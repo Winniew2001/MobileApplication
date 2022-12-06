@@ -1,18 +1,19 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
-
 import '../../authentication_repository/authentication_exceptions.dart';
 import '../../authentication_repository/firebase_auth_repository/authentication_repository.dart';
 import '../../behavior/email.dart';
 import '../../behavior/password.dart';
-
 part 'signin_state.dart';
 
 final signInProvider =
     StateNotifierProvider.autoDispose<SignInController, SignInState>(
         (ref) => SignInController(ref.watch(fireBaseAuthRepoProvider)));
 
+/*
+ * In charge of the sign in process.
+ */
 class SignInController extends StateNotifier<SignInState> {
   final AuthenticationRepository _authenticationRepository;
 

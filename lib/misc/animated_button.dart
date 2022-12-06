@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*
+ * Animated button.
+ */
 class AnimatedButton extends StatefulWidget {
   final VoidCallback? onTap;
   final Widget child;

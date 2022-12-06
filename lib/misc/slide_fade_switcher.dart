@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*
+ * Slide fade animation for switching between sign up and sign in pages.
+ */
 class SlideFadeSwitcher extends StatelessWidget {
   final Widget child;
 

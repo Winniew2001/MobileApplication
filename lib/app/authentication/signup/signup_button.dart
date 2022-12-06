@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
 import 'package:mobile_application/app/authentication/signup/controller/signup_controller.dart';
 
-import '../../components/animated_button.dart';
+import '../../../misc/animated_button.dart';
 import '../../components/rounded_button_style.dart';
 
 class SignUpButton extends ConsumerWidget {
@@ -25,7 +25,3 @@ class SignUpButton extends ConsumerWidget {
     );
   }
 }
-
-// TODO - what this?
-//ErrorDialog.show(context, "Failed SignUp");
-//LoadingSheet.show(context)

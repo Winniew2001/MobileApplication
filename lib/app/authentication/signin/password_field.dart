@@ -5,6 +5,9 @@ import '../../components/text_input_field.dart';
 import '../behavior/password.dart';
 import 'controller/signin_controller.dart';
 
+/*
+ * Field for entering password.
+ */
 class PasswordField extends ConsumerWidget {
   const PasswordField({Key? key}) : super(key: key);
 

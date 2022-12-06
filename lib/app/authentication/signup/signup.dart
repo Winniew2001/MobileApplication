@@ -3,10 +3,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
 import 'package:mobile_application/app/authentication/signup/controller/signup_controller.dart';
 import 'package:mobile_application/app/components/loading_error.dart';
+import '../../../misc/loading_sheet.dart';
 import 'password_field.dart';
 import 'email_field.dart';
 import 'signup_button.dart';
 
+/*
+ * Widget for creating a user.
+ */
 class SignUp extends ConsumerWidget {
   const SignUp({Key? key}) : super(key: key);
 

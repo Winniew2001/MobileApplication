@@ -1,64 +1,72 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_application/app/widgets/recipe_detail_page.dart';
+import 'package:mobile_application/app/widgets/empty_warning.dart';
+import 'package:mobile_application/app/widgets/recipe_divider.dart';
+import 'package:mobile_application/app/widgets/recipe_tile.dart';
 
-//TODO: Clean up widget
+import '../model/collection.dart';
+import '../model/recipe.dart';
+
+/*
+ * Widget for listing all the recipes in a collection.
+ */
 class RecipeListTile extends StatelessWidget {
-  const RecipeListTile({Key? key}) : super(key: key);
+  final DocumentReference<Collection> ref;
+  const RecipeListTile({Key? key, required this.ref}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final recipeRef = ref
+        .collection("recipes").withConverter(
+        fromFirestore: Recipe.fromFirestore,
+        toFirestore: (Recipe recipe, _) => recipe.toFirestore());
+
+    final recipes = recipeRef
+        .withConverter(
+            fromFirestore: Recipe.fromFirestore,
+            toFirestore: (Recipe recipe, _) => recipe.toFirestore())
+        .snapshots();
+
     return Column(
       children: [
-        TextButton(
-          onPressed: () {
-            showCupertinoModalPopup(
-              context: context,
-              builder: (context) => const RecipeDetail(),
-            );
-          },
-          child: Row(
-            children: [
-              Container(
-                height: 90,
-                width: 90,
-                decoration: const BoxDecoration(
-                  color: Colors.blueGrey,
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage('https://placehold.it/100x100'),
-                  ),
-                ),
-              ),
-              const SizedBox(width: 15),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      'Recipe 1',
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 5),
-                    Text(
-                      'Unga le Bunga le Shunga',
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: Colors.blueGrey,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
+        SizedBox(
+          height: 10000,
+          child: StreamBuilder<QuerySnapshot>(
+            stream: recipes,
+            builder:
+                (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+              if (snapshot.hasError) {
+                return const Text("Something went wrong");
+              } else if (snapshot.connectionState == ConnectionState.waiting) {
+                return const CircularProgressIndicator();
+              } else if (snapshot.hasData) {
+                if (snapshot.data!.docs.isNotEmpty) {
+                snapshot.data!.docs[0].id;
+                return ListView.builder(
+                  itemCount: snapshot.data!.size,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        RecipeTile(
+                          recipe: snapshot.data!.docs[index].data() as Recipe,
+                          ref: recipeRef,
+                          id: snapshot.data!.docs[index].id,
+                        ),
+                        const RecipeDivider(),
+                      ],
+                    );
+                  },
+                );
+                } else {
+                  return const EmptyWarning(
+                    warningText: "No Recipes Found!",
+                  );
+                }
+              } else {
+                return Container();
+              }
+            },
           ),
-        ),
-        Container(height: 1, color: Colors.grey.shade200,
         ),
       ],
     );

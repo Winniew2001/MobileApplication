@@ -1,16 +1,17 @@
 import 'dart:async';
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mobile_application/app/authentication/authentication_repository/auth_user.dart';
 import 'package:mobile_application/app/authentication/authentication_repository/firebase_auth_repository/authentication_repository.dart';
-
 part 'authentication_state.dart';
 
 final authProvider =
     StateNotifierProvider<AuthenticationController, AuthenticationState>(
         (ref) => AuthenticationController(ref.watch(fireBaseAuthRepoProvider)));
 
+/*
+ * In charge of authentication.
+ */
 class AuthenticationController extends StateNotifier<AuthenticationState> {
   final AuthenticationRepository _authRepository;
   late final StreamSubscription _streamSubscription;
