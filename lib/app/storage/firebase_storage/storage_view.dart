@@ -74,15 +74,14 @@ class StorageState extends State<StorageView> {
                         }),
                   );
                 } else if (snapShot.connectionState ==
-                    ConnectionState.waiting ||
-                    !snapShot.hasData) {
+                    ConnectionState.waiting) {
                   return const CircularProgressIndicator();
                 } else {
                   return Container();
                 }
               }),
           FutureBuilder(
-              future: storage.downloadURL('test-image.jpg'),
+              future: storage.downloadURL('test/test-image.jpg'),
               builder:
                   (BuildContext context, AsyncSnapshot<String> snapShot) {
                 if (snapShot.connectionState == ConnectionState.done &&
@@ -96,8 +95,7 @@ class StorageState extends State<StorageView> {
                     ),
                   );
                 } else if (snapShot.connectionState ==
-                    ConnectionState.waiting ||
-                    !snapShot.hasData) {
+                    ConnectionState.waiting) {
                   return const CircularProgressIndicator();
                 } else {
                   return Container();

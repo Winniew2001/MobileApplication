@@ -21,7 +21,7 @@ class RecipeImage extends StatelessWidget {
             return const CircularProgressIndicator();
           }
           if (snapshot.data == null) {
-            return const Text("IMAGE NOT FOUND");
+            return const Icon(Icons.image);
           }
           return Image.network(
             snapshot.data!,

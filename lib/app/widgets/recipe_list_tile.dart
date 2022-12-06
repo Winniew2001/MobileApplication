@@ -11,12 +11,14 @@ class RecipeListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final recipes = FirebaseFirestore.instance
+    final recipieRef = FirebaseFirestore.instance
         .collection("users")
         .doc("tVBcwa4zBOihZhiQNZ4I")
         .collection("collections")
         .doc("Sbs0RsD66KhwnYsClIas")
-        .collection("recipes")
+        .collection("recipes");
+
+    final recipes = recipieRef
         .withConverter(
             fromFirestore: Recipe.fromFirestore,
             toFirestore: (Recipe recipe, _) => recipe.toFirestore())
@@ -34,6 +36,7 @@ class RecipeListTile extends StatelessWidget {
               } else if (snapshot.connectionState == ConnectionState.waiting) {
                 return const CircularProgressIndicator();
               } else if (snapshot.hasData) {
+                snapshot.data!.docs[0].id;
                 return ListView.builder(
                   itemCount: snapshot.data!.size,
                   itemBuilder: (context, index) {
@@ -41,7 +44,7 @@ class RecipeListTile extends StatelessWidget {
                       children: [
                         RecipeTile(
                             recipe:
-                                snapshot.data!.docs[index].data() as Recipe),
+                                snapshot.data!.docs[index].data() as Recipe, ref: recipieRef, id: snapshot.data!.docs[index].id,),
                         const RecipeDivider(),
                       ],
                     );

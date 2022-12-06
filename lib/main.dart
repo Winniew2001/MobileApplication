@@ -1,8 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mobile_application/app/authentication/authentication_page.dart';
 import 'package:mobile_application/app/authentication/controller/authentication_controller.dart';
+import 'package:mobile_application/app/pages/all_recipes_page.dart';
 import 'package:mobile_application/app/pages/new_recipe_page.dart';
+import 'package:mobile_application/app/pages/select_recipe_image.dart';
+import 'package:mobile_application/app/storage/firebase_storage/storage_view.dart';
 import 'package:mobile_application/firebase_options.dart';
 
 Future main() async {
@@ -21,12 +25,15 @@ class MyApp extends ConsumerWidget {
 
     Widget getHome() {
       if (authenticationState.status == AuthenticationStatus.authenticated) {
-        return const NewRecipePage();
+        //return NewRecipePage(pageTitle: "NEW RECIPE");
+        print(authenticationState.user.id);
+        return AllRecipesPage();
       } else if (authenticationState.status == AuthenticationStatus.unauthenticated) {
-        return const NewRecipePage();
+        print(authenticationState.user.id);
+        return AuthenticationPage();
       } else {
         // Like this for now at least
-        return const NewRecipePage();
+        return AuthenticationPage();
       }
     }
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RecipeMeasurements extends StatelessWidget {
-  final Map<String, dynamic>? measurements;
+  final List<String>? measurements;
 
   const RecipeMeasurements({super.key, required this.measurements});
 
@@ -19,8 +19,10 @@ class RecipeMeasurements extends StatelessWidget {
             itemBuilder: (context, index) {
               return Row(
                 children: [
-                  Text("${measurements!.keys.elementAt(index)}: "),
-                  Text(measurements!.values.elementAt(index)),
+                  Text(measurements!.elementAt(index),
+                  style: const TextStyle(
+                    fontSize: 20,
+                  ),),
                 ],
               );
             })

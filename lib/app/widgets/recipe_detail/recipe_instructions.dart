@@ -13,7 +13,7 @@ class RecipeInstructions extends StatelessWidget {
       instructions!,
       style: const TextStyle(
         color: Colors.black87,
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: FontWeight.normal
       ),
     );

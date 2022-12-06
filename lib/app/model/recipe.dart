@@ -6,7 +6,7 @@ class Recipe {
   final String? name;
   final String? description;
   final int? servingSize;
-  final Map<String, dynamic>? measurements;
+  final List<String>? measurements;
   final String? instructions;
   final String? imagePath;
 
@@ -29,7 +29,7 @@ class Recipe {
       description: data?['description'],
       servingSize: data?['serving-size'],
       measurements: data?['measurements'] != null
-          ? data!['measurements'] as Map<String, dynamic>
+          ? (data!['measurements'] as List).map((item) => item as String).toList()
           : null,
       instructions: data?['instructions'],
       imagePath: data?['image-path'],

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_application/app/pages/recipe_detail_page.dart';
@@ -7,8 +8,10 @@ import '../model/recipe.dart';
 
 class RecipeTile extends StatelessWidget {
   final Recipe recipe;
+  final CollectionReference<Map<String, dynamic>> ref;
+  final String id;
 
-  const RecipeTile({Key? key, required this.recipe}) : super(key: key);
+  const RecipeTile({Key? key, required this.recipe, required this.ref, required this.id}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,7 @@ class RecipeTile extends StatelessWidget {
       onPressed: () {
         showCupertinoModalPopup(
           context: context,
-          builder: (context) => RecipeDetail(recipe: recipe),
+          builder: (context) => RecipeDetail(recipe: recipe, ref: ref, id: id),
         );
       },
       child: Row(
